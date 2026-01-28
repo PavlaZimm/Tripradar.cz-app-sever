@@ -86,7 +86,7 @@ export interface UserPreferences {
   gastro: boolean
   history: boolean
   kids: boolean
-  include_weekend_events: boolean
+  includeWeekendEvents: boolean
 }
 
 // ============================================
