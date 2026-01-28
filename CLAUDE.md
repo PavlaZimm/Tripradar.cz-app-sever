@@ -192,10 +192,10 @@ const { position, simulateMovement } = useGeolocationMock({
 - [x] Stripe Checkout integrace (API + service)
 - [x] Success/Cancel stra´nky
 
-### Prompt 4: Fulfillment (cˇeka´)
-- [ ] Stripe webhook
-- [ ] Puppeteer PDF generova´nı´
-- [ ] Resend integrace
+### Prompt 4: Fulfillment ✅
+- [x] Stripe webhook (/api/webhook)
+- [x] Puppeteer PDF generova´nı´ (services/pdf)
+- [x] Resend integrace (services/resend)
 
 ### Prompt 5: Radar (cˇeka´)
 - [ ] Geolocation API
