@@ -1,0 +1,1 @@
+# Tripradar.cz-app-sever
