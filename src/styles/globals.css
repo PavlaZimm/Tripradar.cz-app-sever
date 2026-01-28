@@ -1,0 +1,184 @@
+/**
+ * TripRadar Sever - Globalni styly
+ *
+ * Sunlight-Ready Interface Design System
+ * - Vysoky kontrast (4.5:1 pro text, 3:1 pro grafiku)
+ * - Off-white (#F5F5F5) misto ciste bile
+ * - Hluboka seda (#1A1A1A) misto cerne
+ * - Optimalizovano pro OLED displeje a slunecni svetlo
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Sunlight-Ready barevna paleta */
+  --color-background: #F5F5F5;
+  --color-foreground: #1A1A1A;
+  --color-primary: #2563EB;
+  --color-primary-dark: #1D4ED8;
+  --color-accent: #F59E0B;
+  --color-success: #10B981;
+  --color-error: #EF4444;
+
+  /* Kontrast-optimalizovane barvy */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+
+  /* Kategorie RadarPoints */
+  --color-food: #F59E0B;
+  --color-history: #8B5CF6;
+  --color-event: #EC4899;
+  --color-kids: #10B981;
+  --color-nature: #059669;
+
+  /* Spacing pro palcovou zonu */
+  --thumb-zone-height: 33vh;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Dark mode pro OLED setreni baterie */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0A0A0A;
+    --color-foreground: #F5F5F5;
+    --color-text-primary: #F5F5F5;
+    --color-text-secondary: #D1D5DB;
+    --color-text-muted: #9CA3AF;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --color-background: #FFFFFF;
+    --color-foreground: #000000;
+    --color-text-primary: #000000;
+    --color-primary: #0000EE;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+
+  /* Prevent pull-to-refresh on PWA */
+  overscroll-behavior-y: contain;
+}
+
+/* Display font pro okamzitou citelnost v pohybu */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+/* Palcova zona - interaktivni prvky ve spodni tretine */
+.thumb-zone {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--thumb-zone-height);
+  padding-bottom: var(--safe-bottom);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.thumb-zone > * {
+  pointer-events: auto;
+}
+
+/* Radar pulsing animace */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.radar-pulse {
+  animation: radar-pulse 2s ease-in-out infinite;
+}
+
+.radar-pulse-fast {
+  animation: radar-pulse 0.5s ease-in-out infinite;
+}
+
+/* Scratch card efekt */
+.scratch-card-container {
+  position: relative;
+  touch-action: none;
+  user-select: none;
+}
+
+/* Celebration animace */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  animation: confetti-fall 3s ease-in-out forwards;
+}
+
+/* Utility classes pro vysoky kontrast */
+.high-contrast-text {
+  color: var(--color-text-primary);
+  text-shadow: 0 0 1px var(--color-background);
+}
+
+.high-contrast-bg {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-foreground);
+}
+
+/* Focus states pro pristupnost */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* PWA standalone mode specifika */
+@media (display-mode: standalone) {
+  body {
+    /* Extra padding pro gesture areas */
+    padding-top: env(safe-area-inset-top);
+  }
+}
