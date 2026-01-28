@@ -182,9 +182,10 @@ const { position, simulateMovement } = useGeolocationMock({
 - [x] Typove definice
 - [ ] Supabase tabulka 'Orders'
 
-### Prompt 2: UI/UX (cˇeka´)
-- [ ] Sunlight-Ready design implementace
-- [ ] Digital Scratch Card komponenta
+### Prompt 2: UI/UX ✅
+- [x] Sunlight-Ready design implementace (Button, Card, Input, Toggle)
+- [x] Digital Scratch Card komponenta
+- [x] Lottie animace (Celebration komponenta)
 
 ### Prompt 3: Personalizace (cˇeka´)
 - [ ] Multi-step formula´rˇ
