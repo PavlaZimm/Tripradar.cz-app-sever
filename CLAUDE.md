@@ -182,23 +182,27 @@ const { position, simulateMovement } = useGeolocationMock({
 - [x] Typove definice
 - [ ] Supabase tabulka 'Orders'
 
-### Prompt 2: UI/UX (cˇeka´)
-- [ ] Sunlight-Ready design implementace
-- [ ] Digital Scratch Card komponenta
+### Prompt 2: UI/UX ✅
+- [x] Sunlight-Ready design implementace (Button, Card, Input, Toggle)
+- [x] Digital Scratch Card komponenta
+- [x] Lottie animace (Celebration komponenta)
 
-### Prompt 3: Personalizace (cˇeka´)
-- [ ] Multi-step formula´rˇ
-- [ ] Stripe Checkout integrace
+### Prompt 3: Personalizace ✅
+- [x] Multi-step formula´rˇ (/configure)
+- [x] Stripe Checkout integrace (API + service)
+- [x] Success/Cancel stra´nky
 
-### Prompt 4: Fulfillment (cˇeka´)
-- [ ] Stripe webhook
-- [ ] Puppeteer PDF generova´nı´
-- [ ] Resend integrace
+### Prompt 4: Fulfillment ✅
+- [x] Stripe webhook (/api/webhook)
+- [x] Puppeteer PDF generova´nı´ (services/pdf)
+- [x] Resend integrace (services/resend)
 
-### Prompt 5: Radar (cˇeka´)
-- [ ] Geolocation API
-- [ ] Vibracˇnı´ feedback
-- [ ] Filtrace podle preferences
+### Prompt 5: Radar ✅
+- [x] Geolocation API (useGeolocation hook)
+- [x] Vibracˇnı´ feedback (useVibration hook)
+- [x] Filtrace podle preferences
+- [x] Radar komponenta s vizualizacı´
+- [x] Radar stra´nka (/radar)
 
 ---
 
