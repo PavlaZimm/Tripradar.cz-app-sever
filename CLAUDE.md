@@ -187,9 +187,10 @@ const { position, simulateMovement } = useGeolocationMock({
 - [x] Digital Scratch Card komponenta
 - [x] Lottie animace (Celebration komponenta)
 
-### Prompt 3: Personalizace (cˇeka´)
-- [ ] Multi-step formula´rˇ
-- [ ] Stripe Checkout integrace
+### Prompt 3: Personalizace ✅
+- [x] Multi-step formula´rˇ (/configure)
+- [x] Stripe Checkout integrace (API + service)
+- [x] Success/Cancel stra´nky
 
 ### Prompt 4: Fulfillment (cˇeka´)
 - [ ] Stripe webhook
