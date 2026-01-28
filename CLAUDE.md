@@ -197,10 +197,12 @@ const { position, simulateMovement } = useGeolocationMock({
 - [x] Puppeteer PDF generova´nı´ (services/pdf)
 - [x] Resend integrace (services/resend)
 
-### Prompt 5: Radar (cˇeka´)
-- [ ] Geolocation API
-- [ ] Vibracˇnı´ feedback
-- [ ] Filtrace podle preferences
+### Prompt 5: Radar ✅
+- [x] Geolocation API (useGeolocation hook)
+- [x] Vibracˇnı´ feedback (useVibration hook)
+- [x] Filtrace podle preferences
+- [x] Radar komponenta s vizualizacı´
+- [x] Radar stra´nka (/radar)
 
 ---
 
