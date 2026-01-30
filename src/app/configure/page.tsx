@@ -13,13 +13,13 @@ export const metadata = {
 
 export default function ConfigurePage() {
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-lg mx-auto px-4 py-8">
-        <header className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-foreground mb-2">
+    <main className="min-h-screen bg-background overflow-y-auto">
+      <div className="max-w-lg mx-auto px-4 py-6 pb-32">
+        <header className="text-center mb-6">
+          <h1 className="text-xl font-bold text-foreground mb-2">
             Sestavte si výlet
           </h1>
-          <p className="text-text-secondary">
+          <p className="text-sm text-text-secondary">
             Vyberte, co vás zajímá, a my vám připravíme itinerář na míru
           </p>
         </header>

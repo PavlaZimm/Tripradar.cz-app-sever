@@ -116,7 +116,7 @@ export function ConfigureForm() {
   const progress = ((stepIndex + 1) / 3) * 100
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Progress bar */}
       <div className="relative h-2 bg-foreground/10 rounded-full overflow-hidden">
         <div
@@ -288,8 +288,6 @@ export function ConfigureForm() {
         </div>
       </div>
 
-      {/* Spacer pro fixed buttons */}
-      <div className="h-24" />
     </div>
   )
 }
