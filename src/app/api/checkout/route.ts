@@ -1,14 +1,14 @@
 /**
  * API Route: POST /api/checkout
  *
- * Vytvori Stripe Checkout session a vrati URL pro presmerovani.
+ * DEMO verze - presmeruje primo na success stranku bez Stripe.
+ * Pro produkci odkomentuj Stripe integraci.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { createCheckoutSession } from '@/services/stripe'
 import type { UserPreferences } from '@/types'
 
-// Dostupne vylety (stejne jako v ConfigureForm)
+// Dostupne vylety
 const TRIPS: Record<string, { name: string; price: number }> = {
   'borena-tajemstvi': {
     name: 'Tajemství Bořeně',
@@ -51,22 +51,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Vytvoreni Stripe Checkout session
-    const session = await createCheckoutSession({
-      tripId: body.tripId,
-      tripName: trip.name,
-      price: trip.price,
-      email: body.email,
-      preferences: body.preferences,
-    })
+    // DEMO: Presmerovani primo na success (bez Stripe)
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+    const demoSessionId = `demo_${Date.now()}`
 
-    // Vracime URL pro presmerovani
-    return NextResponse.json({ url: session.url })
+    return NextResponse.json({
+      url: `${appUrl}/checkout/success?session_id=${demoSessionId}`
+    })
   } catch (error) {
     console.error('Checkout error:', error)
 
     return NextResponse.json(
-      { error: 'Nepodařilo se vytvořit platbu' },
+      { error: 'Něco se pokazilo' },
       { status: 500 }
     )
   }
