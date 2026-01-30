@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'TripRadar Sever',
-  description: 'Personalizovany a hravy ekosystem pro vyletove zazitky na Bilinsku',
+  title: 'TripRadar - Výlety jinak',
+  description: 'Personalizované výletové zážitky. Vyber si, co tě zajímá, a my ti připravíme trasu plnou překvapení.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     title: 'TripRadar',
   },
   openGraph: {
-    title: 'TripRadar Sever',
-    description: 'Objevte Bilinsko s personalizovanym pruvodcem',
+    title: 'TripRadar - Výlety jinak',
+    description: 'Personalizované výletové zážitky plné překvapení',
     url: 'https://tripradar.cz',
     siteName: 'TripRadar',
     locale: 'cs_CZ',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F5F5F5' },
-    { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' },
+    { media: '(prefers-color-scheme: light)', color: '#FAF8F5' },
+    { media: '(prefers-color-scheme: dark)', color: '#1A2418' },
   ],
   width: 'device-width',
   initialScale: 1,
