@@ -6,11 +6,22 @@
 
 import Stripe from 'stripe'
 
-// Inicializace Stripe klienta
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-12-18.acacia',
-  typescript: true,
-})
+// Lazy initialization - Stripe client se vytvori az pri prvnim pouziti
+let stripeClient: Stripe | null = null
+
+function getStripe(): Stripe {
+  if (!stripeClient) {
+    const apiKey = process.env.STRIPE_SECRET_KEY
+    if (!apiKey) {
+      throw new Error('STRIPE_SECRET_KEY is not configured')
+    }
+    stripeClient = new Stripe(apiKey, {
+      apiVersion: '2025-02-24.acacia',
+      typescript: true,
+    })
+  }
+  return stripeClient
+}
 
 // Typy pro checkout
 export interface CheckoutSessionParams {
@@ -38,7 +49,7 @@ export async function createCheckoutSession({
 }: CheckoutSessionParams): Promise<Stripe.Checkout.Session> {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     payment_method_types: ['card'],
     mode: 'payment',
     customer_email: email,
@@ -75,7 +86,7 @@ export async function createCheckoutSession({
 export async function getCheckoutSession(
   sessionId: string
 ): Promise<Stripe.Checkout.Session> {
-  return stripe.checkout.sessions.retrieve(sessionId, {
+  return getStripe().checkout.sessions.retrieve(sessionId, {
     expand: ['line_items', 'payment_intent'],
   })
 }
@@ -93,5 +104,5 @@ export function constructWebhookEvent(
     throw new Error('STRIPE_WEBHOOK_SECRET is not configured')
   }
 
-  return stripe.webhooks.constructEvent(payload, signature, webhookSecret)
+  return getStripe().webhooks.constructEvent(payload, signature, webhookSecret)
 }

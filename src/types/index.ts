@@ -45,25 +45,27 @@ export interface ConfigurableField {
 
 export interface RadarPoint {
   id: string
-  trip_id: string
+  tripId: string
   name: string
-  description: string
+  description?: string
   category: RadarPointCategory
-  coords: {
-    lat: number
-    lng: number
-  }
-  content: RadarPointContent
-  created_at: string
+  coords: Coordinates
+  content?: RadarPointContent
+  createdAt: Date | string
+}
+
+export interface Coordinates {
+  lat: number
+  lng: number
 }
 
 export type RadarPointCategory = 'food' | 'history' | 'event' | 'kids' | 'nature'
 
 export interface RadarPointContent {
-  title: string
-  description: string
+  title?: string
+  description?: string
   images?: string[]
-  opening_hours?: string
+  openingHours?: string
   contact?: string
   url?: string
 }
@@ -86,7 +88,7 @@ export interface UserPreferences {
   gastro: boolean
   history: boolean
   kids: boolean
-  include_weekend_events: boolean
+  includeWeekendEvents: boolean
 }
 
 // ============================================

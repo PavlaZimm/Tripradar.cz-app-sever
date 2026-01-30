@@ -21,7 +21,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Zbytky středověkého hradu ze 14. století',
     category: 'history',
     coords: { lat: 50.5456, lng: 13.7811 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -31,7 +31,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Místo spojené s legendou o čarodějnici',
     category: 'history',
     coords: { lat: 50.5462, lng: 13.7825 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -41,7 +41,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Tradiční česká kuchyně s výhledem',
     category: 'food',
     coords: { lat: 50.5430, lng: 13.7790 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -51,7 +51,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Útulná kavárna s domácími zákusky',
     category: 'food',
     coords: { lat: 50.5425, lng: 13.7805 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -61,7 +61,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Moderní hřiště s lanovým centrem',
     category: 'kids',
     coords: { lat: 50.5415, lng: 13.7780 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -71,7 +71,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Začátek interaktivní stezky pro děti',
     category: 'kids',
     coords: { lat: 50.5420, lng: 13.7795 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -81,7 +81,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Farmářské trhy každou sobotu',
     category: 'event',
     coords: { lat: 50.5410, lng: 13.7770 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
   {
@@ -91,7 +91,7 @@ const MOCK_RADAR_POINTS: RadarPoint[] = [
     description: 'Přírodní vyhlídkový bod',
     category: 'nature',
     coords: { lat: 50.5470, lng: 13.7830 },
-    content: {},
+    content: undefined,
     createdAt: new Date(),
   },
 ]
